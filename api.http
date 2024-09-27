@@ -1,0 +1,39 @@
+POST http://localhost:8080/users
+Content-Type: application/json
+
+{
+  "name": "Mayderson",
+  "username": "mayderson",
+  "password": "12345678"
+}
+
+###
+
+POST http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: Basic mayderson:12345678
+
+{
+  "title": "Complete project report",
+  "description": "Finish the project report and submit to the manager",
+  "startAt": "2024-09-29T09:00:00",
+  "endAt": "2024-09-29T17:00:00",
+  "priority": "High"
+}
+
+###
+
+PUT http://localhost:8080/tasks/e2cc9b6b-fd2a-4327-ba44-8ea56c6575e7
+Content-Type: application/json
+Authorization: Basic mayderson:12345678
+
+{
+  "title": "Complete project report - UPDATE",
+  "description": "Finish the project report and submit to the manager - UPDATE"
+}
+
+###
+
+GET http://localhost:8080/tasks
+Content-Type: application/json
+Authorization: Basic mayderson:12345678
